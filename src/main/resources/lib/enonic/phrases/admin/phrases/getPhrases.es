@@ -1,4 +1,4 @@
-import {toStr} from '/lib/enonic/util';
+//import {toStr} from '/lib/enonic/util';
 import {connect} from '/lib/xp/node';
 
 import {BRANCH_ID, NT_PHRASE, REPO_ID} from '/lib/enonic/phrases/constants';
@@ -12,7 +12,7 @@ export function getPhrases({
 		branch
 	})
 } = {}) {
-	log.info(toStr({branch, repoId}));
+	//log.info(toStr({branch, repoId}));
 
 	const queryParams = {
 		count: -1,
@@ -29,18 +29,15 @@ export function getPhrases({
 		query: '', //"_parentPath = '/phrases'",
 		sort: '_name ASC'
 	};
-	log.info(toStr({queryParams}));
+	//log.info(toStr({queryParams}));
 
 	const queryRes = connection.query(queryParams);
-	log.info(toStr({queryRes}));
+	//log.info(toStr({queryRes}));
 
 	const phrases = queryRes.hits.map((hit) => {
-		const {_name: key, locales} = connection.get(hit.id);
-		return {
-			key,
-			locales
-		};
+		const {_name: key} = connection.get(hit.id);
+		return {key};
 	});
-	log.info(toStr({phrases}));
+	//log.info(toStr({phrases}));
 	return phrases;
 }

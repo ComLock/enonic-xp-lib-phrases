@@ -54,6 +54,7 @@ module.exports = {
 		'no-tabs': ['off'],
 		'no-underscore-dangle': ['error', {
 			allow: [
+				'_name',
 				'_path',
 				'_id'
 			],

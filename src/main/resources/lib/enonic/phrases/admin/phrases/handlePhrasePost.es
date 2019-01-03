@@ -7,19 +7,12 @@ import {listPhrasesPage} from '/lib/enonic/phrases/admin/phrases/listPhrasesPage
 
 export function handlePhrasePost({
 	params: {
-		key,
-		...rest
+		key
 	},
 	path
 }) {
-	//log.info(toStr({key, rest, path}));
-	const locales = {};
-	Object.keys(rest).forEach((p) => {
-		//log.info(toStr({p}));
-		const locale = p.replace(/phrase\[/, '').replace(/\]$/, '');
-		locales[locale] = rest[p];
-	});
-	//log.info(toStr({locales}));
+	//log.info(toStr({key, path}));
+
 	const connection = connect({
 		repoId: REPO_ID,
 		branch: BRANCH_ID
@@ -29,12 +22,12 @@ export function handlePhrasePost({
 		_parentPath: '/phrases',
 		_name,
 		_inheritsPermissions: true,
-		locales,
 		type: NT_PHRASE
 	};
 	const node = connection.create(createNodeParams);
-	connection.refresh();
 	//log.info(toStr({node}));
+	connection.refresh();
+
 	let status = 200;
 	const messages = [];
 	if (node) {
