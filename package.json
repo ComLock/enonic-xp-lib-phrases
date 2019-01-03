@@ -29,5 +29,8 @@
     "test": "mocha -c --require babel-core/register -- test/**/*.es*",
     "watch": "webpack -w --stdin",
     "webpack": "webpack"
+  },
+  "dependencies": {
+    "set-value": "^3.0.0"
   }
 }

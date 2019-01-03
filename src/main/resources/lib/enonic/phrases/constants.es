@@ -21,6 +21,7 @@ export const NT_FOLDER = `${APP_PHRASES}:folder`;
 export const NT_LANGUAGE = `${APP_PHRASES}:language`;
 export const NT_LOCALE = `${APP_PHRASES}:locale`;
 export const NT_PHRASE = `${APP_PHRASES}:phrase`;
+export const NT_LOCALIZATION = `${APP_PHRASES}:localization`;
 
 
 //──────────────────────────────────────────────────────────────────────────────
