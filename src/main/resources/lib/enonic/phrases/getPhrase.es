@@ -22,7 +22,7 @@ export function getPhrase({
 	const id = node._path.replace(/^\/phrases\//, '');
 	return {
 		id,
-		displayName: (node.locales && node.locales.en) || id,
+		displayName: id,
 		description: id
 	};
 }
