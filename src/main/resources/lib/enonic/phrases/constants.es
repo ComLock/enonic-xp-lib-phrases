@@ -1,27 +1,28 @@
 import {getToolUrl} from '/lib/xp/admin';
 
-export const APP_PHRASES = 'com.enonic.admin.phrases';
-export const PHRASES_TOOL_PATH = getToolUrl(APP_PHRASES, 'phrases');
+export const PACKAGE = 'com.enonic.phrases';
+export const PHRASES_ADMIN = `${PACKAGE}.admin`;
+export const PHRASES_TOOL_PATH = getToolUrl(PHRASES_ADMIN, 'phrases');
 
 
 //──────────────────────────────────────────────────────────────────────────────
 // Context Role / Repo
 //──────────────────────────────────────────────────────────────────────────────
-export const ROLE_PHRASES_ADMIN = `${APP_PHRASES}.admin`;
+export const ROLE_PHRASES_ADMIN = `${PACKAGE}.admin`;
 
 export const BRANCH_ID = 'master';
-export const REPO_ID = APP_PHRASES;
+export const REPO_ID = PACKAGE;
 
 
 //──────────────────────────────────────────────────────────────────────────────
 // Node types
 //──────────────────────────────────────────────────────────────────────────────
-export const NT_COUNTRY = `${APP_PHRASES}:country`;
-export const NT_FOLDER = `${APP_PHRASES}:folder`;
-export const NT_LANGUAGE = `${APP_PHRASES}:language`;
-export const NT_LOCALE = `${APP_PHRASES}:locale`;
-export const NT_PHRASE = `${APP_PHRASES}:phrase`;
-export const NT_LOCALIZATION = `${APP_PHRASES}:localization`;
+export const NT_COUNTRY = `${PACKAGE}:country`;
+export const NT_FOLDER = `${PACKAGE}:folder`;
+export const NT_LANGUAGE = `${PACKAGE}:language`;
+export const NT_LOCALE = `${PACKAGE}:locale`;
+export const NT_PHRASE = `${PACKAGE}:phrase`;
+export const NT_LOCALIZATION = `${PACKAGE}:localization`;
 
 
 //──────────────────────────────────────────────────────────────────────────────
