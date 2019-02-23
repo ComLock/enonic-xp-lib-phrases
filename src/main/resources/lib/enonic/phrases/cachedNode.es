@@ -36,7 +36,7 @@ export const cachedNode = ({
 		const node = repoConnection.get(id); //log.info(toStr({node}));
 		if (!node) {
 			const msg = `Could not find node ${repoBranchNodeId}`;
-			log.error(msg);
+			//log.error(msg); // Noisy
 			throw new Error(msg);
 		}
 		return node;

@@ -1,5 +1,5 @@
 import {newCache} from '/lib/cache';
-import {toStr} from '/lib/enonic/util';
+//import {toStr} from '/lib/enonic/util';
 import {dlv} from '/lib/enonic/util/object';
 import {getLocale} from '/lib/xp/admin';
 
@@ -19,8 +19,8 @@ export function localize({
 	//log.info(toStr({localizations, locale, phrase}));
 
 	const localizedPhrase = dlv(localizations, `${locale}.${phrase}`, '');
-	log.info(toStr({
+	/*log.info(toStr({
 		localizations, locale, phrase, localizedPhrase
-	}));
+	}));*/
 	return localizedPhrase;
 } // function localize
