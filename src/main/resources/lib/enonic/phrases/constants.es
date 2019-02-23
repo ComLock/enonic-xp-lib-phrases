@@ -26,6 +26,13 @@ export const NT_LOCALIZATION = `${PACKAGE}:localization`;
 
 
 //──────────────────────────────────────────────────────────────────────────────
+// Node paths
+//──────────────────────────────────────────────────────────────────────────────
+export const PATH_LOCALES = '/locales';
+export const PATH_LOCALIZATIONS = '/localizations';
+
+
+//──────────────────────────────────────────────────────────────────────────────
 // Return types
 //──────────────────────────────────────────────────────────────────────────────
 export const RT_JSON = 'text/json;charset=utf-8';
