@@ -6,15 +6,24 @@ import {getLocale} from '/lib/xp/admin';
 import {buildLocalizations} from '/lib/enonic/phrases/buildLocalizations';
 
 
+const LOCALIZE_CACHE = newCache({
+	expire: 60 * 60, // 1 hour
+	size: 100
+});
+
+
 export function localize({
+	clearCache = false,
 	locale = getLocale(),
-	nodeCache = newCache({
-		expire: 60 * 60, // 1 hour
-		size: 100
-	}),
+	nodeCache = LOCALIZE_CACHE,
 	phrase
 }) {
-	//log.info(toStr({locale, phrase}));
+	//log.info(toStr({clearCache, locale, phrase}));
+	if (clearCache) {
+		log.info('Clearing localizationCache.');
+		nodeCache.clear();
+	}
+
 	const localizations = buildLocalizations({locale, nodeCache, phrase});
 	//log.info(toStr({localizations, locale, phrase}));
 
